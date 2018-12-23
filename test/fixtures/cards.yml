@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  card_number: 1
+  security_code: 1
+  card_type: MyString
+  zip_code: 1
+  exp_date: 2018-12-22 15:11:35
+
+two:
+  user: two
+  card_number: 1
+  security_code: 1
+  card_type: MyString
+  zip_code: 1
+  exp_date: 2018-12-22 15:11:35
