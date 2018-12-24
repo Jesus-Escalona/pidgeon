@@ -15,6 +15,13 @@
  */
  body { padding-top: 80px; }
 
+.errors {
+  color:#F1355B;
+  font-weight:bold;
+  padding: 2rem;
+  text-align:center;
+}
+
 .navigation-clean-button {
   background:#fff;
   padding-top:.75rem;
