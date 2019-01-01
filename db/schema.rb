@@ -10,11 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_22_201135) do
+ActiveRecord::Schema.define(version: 2018_12_31_175007) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "cards", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "card_number"
+    t.bigint "user_id"
+    t.string "card_number"
     t.integer "security_code"
     t.string "card_type"
     t.integer "zip_code"
@@ -24,14 +27,25 @@ ActiveRecord::Schema.define(version: 2018_12_22_201135) do
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
+  create_table "relations", force: :cascade do |t|
+    t.bigint "follower_id"
+    t.bigint "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_relations_on_followed_id"
+    t.index ["follower_id"], name: "index_relations_on_follower_id"
+  end
+
   create_table "transactions", force: :cascade do |t|
-    t.integer "sender_id"
-    t.integer "receiver_id"
+    t.bigint "sender_id"
+    t.bigint "receiver_id"
     t.decimal "amount", precision: 16, scale: 2
     t.string "currency", default: "USD"
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["receiver_id"], name: "index_transactions_on_receiver_id"
+    t.index ["sender_id"], name: "index_transactions_on_sender_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,6 +53,7 @@ ActiveRecord::Schema.define(version: 2018_12_22_201135) do
     t.string "password_digest"
     t.string "name"
     t.string "email"
+    t.string "image", default: "default.jpg"
     t.decimal "balance", precision: 16, scale: 2, default: "0.0"
     t.integer "country_id"
     t.integer "phone_number"
@@ -46,4 +61,9 @@ ActiveRecord::Schema.define(version: 2018_12_22_201135) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "cards", "users"
+  add_foreign_key "relations", "users", column: "followed_id"
+  add_foreign_key "relations", "users", column: "follower_id"
+  add_foreign_key "transactions", "users", column: "receiver_id"
+  add_foreign_key "transactions", "users", column: "sender_id"
 end
