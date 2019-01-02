@@ -38,7 +38,7 @@
 					</div>
 					<div class="col-sm-7 p-1">
 						<div class="col-sm-12 p-1 mr-1">
-					    	<h6 class="card-title"><%= "#{t.sender.name} paid you #{'%.2f' % t.amount.to_f}" %></h6>
+					    	<h6 class="card-title"><%= "#{t.sender.name} paid you $#{'%.2f' % t.amount.to_f}" %></h6>
 					    	<p class="card-text m-0"><%= t.message %></p>
 					    	<p class="hour"><%= "#{time_ago_in_words(t.created_at)} ago" %></p>
 					    </div>

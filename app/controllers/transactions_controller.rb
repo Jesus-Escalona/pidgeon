@@ -15,7 +15,6 @@ before_action :authenticate
 		@amount = transaction_params[:amount].to_d
 		@message = transaction_params[:message]
 		@t = Transaction.new(sender: @logged_in_user, receiver: @receiver, amount: @amount, message: @message)
-		byebug
 		if @t.valid?
 			Transaction.transaction do
 				@t.save
