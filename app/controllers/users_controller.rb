@@ -33,14 +33,18 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		uploaded_io = user_edit_params[:image]
 		@name = user_edit_params[:name]
 		@email = user_edit_params[:email]
-		ext = File.extname(uploaded_io.original_filename)
-		filename = "#{@logged_in_user.username}#{ext}"
-		File.open(Rails.root.join('app', 'assets', 'images', filename), 'wb') do |file|
-		  file.write(uploaded_io.read)
+		uploaded_io = user_edit_params[:image]
+		if uploaded_io
+			ext = File.extname(uploaded_io.original_filename)
+			filename = "#{@logged_in_user.username}#{ext}"
+			File.open(Rails.root.join('app', 'assets', 'images', filename), 'wb') do |file|
+		  		file.write(uploaded_io.read)
+			end
+			@logged_in_user.update(image: filename)
 		end
+
 		if @logged_in_user.update(name: @name, email: @email, image: filename)
 		  	redirect_to users_profile_path
 		else
