@@ -4,7 +4,7 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">Send Money 💵</h5>
-            <%= form_for @transaction, class:"form-signin" do |f| %>
+            <%= form_for @transaction, :html => {:class => "form-signin"} do |f| %>
               <div class="form-label-group">
                 <h6>To:</h6>
                 <%= f.collection_select :receiver, @all_users, :id, :username, {}, {:class=>"form-control"} %>

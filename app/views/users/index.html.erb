@@ -24,9 +24,9 @@
 				    <div class="col-sm-2 p-1 text-center">
 				    	<a href="#"><i class="icon ion-heart"></i></a>
 				    	<% if @logged_in_user.follows.include?(u) %>
-				    		<a href="#">Following</i></a>
+				    		<%= link_to("<button class='btn btn-secondary'>Following</button>".html_safe, relation_path(u), class:"card-link", method:"delete") %>
 				    	<% else %>
-				    		<a href="#">Follow</i></a>
+				    		<%= link_to("<button class='btn btn-primary'>Follow</button>".html_safe, relations_path(u), class:"card-link", method:"post") %>
 				    	<% end %>
 					</div>
 				  </div>

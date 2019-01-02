@@ -7,7 +7,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6 mx-auto">
-			<h2 class="p-3 text-center">Followers</h2>
+			<h2 class="p-3 text-center">Followers <%= @followers.count %></h2>
 			<% @followers.each do |f| %>
 				<div class="card p-1">
 				  <div class="card-body row p-2">
@@ -29,7 +29,7 @@
 			<% end %>
 		</div>
 		<div class="col-md-6 mx-auto">
-			<h2 class="p-3 text-center">Following</h2>
+			<h2 class="p-3 text-center">Following <%= @followings.count %></h2>
 			<% @followings.each do |f| %>
 				<div class="card p-1">
 				  <div class="card-body row p-2">

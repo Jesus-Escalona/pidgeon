@@ -1,9 +1,14 @@
 // Place all the styles related to the Transactions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-i.icon.ion-heart{
+i.icon.ion-heart {
    font-size: 25px;
    color: pink;
+}
+
+i.icon.ion-checkmark-circled {
+   font-size: 25px;
+   color: blue;
 }
 
 .hour {
