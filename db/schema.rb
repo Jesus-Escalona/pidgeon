@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2018_12_31_175007) do
     t.string "name"
     t.string "email"
     t.string "image", default: "default.jpg"
-    t.decimal "balance", precision: 16, scale: 2, default: "0.0"
+    t.decimal "balance", precision: 16, scale: 2, default: "500.0"
     t.integer "country_id"
     t.integer "phone_number"
     t.datetime "created_at", null: false

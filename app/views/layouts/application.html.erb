@@ -27,7 +27,7 @@
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <%= link_to("Balance: $#{'%.2f' % @logged_in_user.balance.to_f}", users_dashboard_path, :class=>"login dropdown-item") %>
                 <%= link_to("Cards", cards_path, :class=>"login dropdown-item") %>
-                <%= link_to("Friends #{@logged_in_user.follows.count + @logged_in_user.fans.count}", relations_path, :class=>"login dropdown-item") %>
+                <%= link_to("Friends #{@friendships}", relations_path, :class=>"login dropdown-item") %>
                 <%= link_to("Transactions", transactions_path, :class=>"login dropdown-item") %>
               </div>
             <%= link_to("Log Out", "/sessions/#{@logged_in_user.id}", :class=>"login", method: "delete") %>

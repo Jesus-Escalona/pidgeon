@@ -19,6 +19,8 @@ class ApplicationController < ActionController::Base
   def setup_user_stuff
     if session["user_id"]
       @logged_in_user = User.find(session["user_id"])
+      sql = "select count(*) from (select followed_id from relations f where f.follower_id = 1 UNION select follower_id from relations f where f.followed_id = 1)as a"
+      @friendships = ActiveRecord::Base.connection.execute(sql).getvalue(0,0)
     end
   end
 

@@ -10,7 +10,11 @@
                 <%= f.label :card_number %>
               </div>
               <div class="form-label-group">
-                <%= f.text_field :exp_date, :value => @card.exp_date.strftime("%m/%Y"),class:"form-control", required:""  %>
+                <%= f.text_field :card_type, class:"form-control", required:""  %>
+                <%= f.label :card_type %>
+              </div>
+              <div class="form-label-group">
+                <%= f.text_field :exp_date, :value => @card.exp_date.strftime("%m/%Y"),class:"form-control", required:"", min: Date.today  %>
                 <%= f.label "expiration date" %>
               </div>
               <div class="form-label-group">
