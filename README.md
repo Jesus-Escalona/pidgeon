@@ -1,7 +1,7 @@
 # Pidgeon
 
 ## Pay your friends, your landlord or your colleagues in a seamless way.
-### See where your friends money go, how much money they spend, why are they paying that person for? and all those little details that should be actually private, but we made it open and social just because.
+### See where your friends money go, how much money they spend, why are they paying that person for? and all those little details that *should* be private, but we made it open and social just because.
 
 ### Preview
 ![Pidgeon Preview](https://giant.gfycat.com/GenerousDefinitiveAnole.gif)
