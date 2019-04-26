@@ -38,4 +38,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Everyone whose libraries are a dependency to this project, thank you.
-* Inspiration from trying to move things myself and getting really different prices from moving companies.
+* Inspiration from trying to learn how to make a self-referential ACID transactional system and server side rendering in Rails.
