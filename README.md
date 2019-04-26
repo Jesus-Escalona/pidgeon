@@ -1,8 +1,13 @@
 # Pidgeon
 
 ## Pay your friends, your landlord or your colleagues in a seamless way.
+### See where your friends money go, how much money they spend, why are they paying that person for? and all those little details that should be actually private, but we made it open and social just because.
 
-# Register now and earn **500$** on us! check it out
+### Preview
+![Pidgeon Preview](https://giant.gfycat.com/GenerousDefinitiveAnole.gif)
+
+
+## Register now and earn **500$** on us! check it out
 * [Pidgeon on Heroku](https://pidgeon.herokuapp.com/) - Please wait a few seconds for the Dyno to wake up!
 
 ## Getting Started
